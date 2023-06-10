@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Tomorrow:wght@500&display=swap');
+
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Tomorrow', sans-serif;
+}
+
+::root{
+    /* Heading Color #F8EF00 */
+    --heading-color: #F8EF00;
+    /* Text Color #FFFFFF */
+    --text-color: #FFFFFF;
+    /* Button Color #F8EF00 */
+    --btn-color: #F8EF00;
+
+    --gray-200: hsl(252, 11%, 91%);
+    --gray-400: hsl(251, 9%, 53%);
+    --gray-500: hsl(253, 5%, 34%);
+    --gray-700: hsl(247, 11%, 15%);
+    --gray-800: hsl(248, 15%, 11%);
+    --green: hsl(127, 100%, 82%);
+    --yellow: hsl(42, 91%, 68%);
+    --orange: hsl(13, 95%, 66%);
+    --red: hsl(0, 91%, 63%);
+    --spacing-xs: clamp(0.875rem, 0.5rem + 2vw, 1.25rem);
+    --spacing-sm: clamp(0.875rem, 0.5rem + 2vw, 1.5rem);
+    --spacing-md: clamp(1rem, 0.5rem + 3vw, 2rem);
+}
+
+
+body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: hsl(252, 17%, 6%);
+}
+
+.container{
+    width: 90%;
+    max-width: 450px;
+}
+
+.container h1{
+    font-family: 'Tomorrow', sans-serif;
+    font-size: 40px;
+    line-height: 1.2;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #F8EF00;
+    opacity: 0.75;
+    text-align: center;
+}
+
+.display-container{
+    position: relative;
+    /* Linear Gradient 00F0FF */
+    background-color: hsl(247, 11%, 15%);
+    border-radius: 0.2rem;
+    margin: 1rem 0;
+    padding-top: 1.35rem;
+    display: flex;
+    border: 1px solid #00F0FF;
+}
+
+.display{
+    width: 100%;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    padding: 1.15rem 1rem;
+    font-family: 'Tomorrow', sans-serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 30px;
+    letter-spacing: 1px;
+    padding-right: 3.25rem;
+    
+}
+
+.display::placeholder{
+    position: absolute;
+    top: 50%;
+    left: 1.5rem;
+    font-size: 1.5rem;
+    line-height: 30px;
+    opacity: 0.65;
+    text-transform: uppercase;
+    color: #00F0FF;
+    transform: translateY(-50%);
+
+}
+
+.display-container button{
+    position: absolute;
+    top: 50%;
+    right: 1.5rem;
+    transform: translateY(-50%);
+    background-color: transparent
+}
+
+.display-container button img{
+    width: 1.5rem;
+    height: 1.5rem;
+    object-fit: contain;
+    background-color: transparent;
+}
+
+.input-container{
+    width: 100%;
+    background-color: hsl(247, 11%, 15%);
+    border-radius: 0.2rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #00F0FF;
+}
+
+.length-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.length-container p:nth-child(1){
+    color: white;
+    font-size: 1.5rem;
+}
+
+.length-container p:nth-child(2){
+    color: #F8EF00;
+    font-size: 1.5rem;
+}
+
+.strength-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.75rem;
+    margin-bottom: 2rem;
+}
+
+.strength-container p{
+    color: white;
+    font-size: 1.5rem;
+}
+
+.indicator{
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+}
+
+.generateButton{
+    width: 100%;
+    padding: 1rem 0;
+    background-color: #F8EF00;
+    text-align: center;
+    font-family: 'Tomorrow', sans-serif;
+    border-radius: 0.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    font-size: 1.2rem;
+
+}
+
+.checkbox-container{
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+    gap: 0 1rem;
+}
+
+.checkbox-container input{
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #00F0FF;
+    cursor: pointer;
+    position: relative;
+    border-radius: 0.35rem;
+}
+
+.checkbox-container input:checked{
+    background-color: #00F0FF;
+}
+
+.checkbox-container input:checked::before{
+    content: '✔';
+    position: absolute;
+    color: black;
+    font-size: 1.05rem;
+    font-weight: 600;
+    left: 50%;
+    top: -3.5px;
+    transform: translateX(-50%) translateY(20%);
+}
+
+.slider{
+    appearance: none;
+    width: 100%;
+    cursor: pointer;
+    background-color: hsl(253, 5%, 34%);
+    background-image: linear-gradient(to right, #00F0FF, #F8EF00);
+    height: 0.75rem;
+    border-radius: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    background-repeat: no-repeat;
+}
+
+.slider::-webkit-slider-thumb{
+    appearance: none;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: #F8EF00;
+    cursor: pointer;
+    margin-top: -3px;
+    border: 1px solid #00F0FF;
+}
+
+label{
+    color: white;
+    font-size: 1.5rem;
+    font-family: 'Tomorrow', sans-serif;
+}
+
+.copyBtn{
+    background-color: transparent;
+    border: none;
+}
+
+.tooltip{
+    left: -3rem;
+    font-size: 1.5rem;
+    padding: 0.5rem 1rem;
+    transform-origin: bottom;
+    transition: all 250ms ease-in-out;
+    opacity: 0;
+    transform: scale(0);
+}
+
+.active{
+    opacity: 1;
+    transform: scale(1);
+}
